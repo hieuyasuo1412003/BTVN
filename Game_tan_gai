@@ -1,1 +1,48 @@
+player = {
+    "Name":"Hayama Akisa",
+    "Age":16,
+}
+while True:
+    print("Viết "stats" để xem chỉ số bản thân hoặc viết "play" để chơi")
+    cmd = input("Lựa chọn của bạn:")
+    if cmd == "stats":
+        print("Name :", player["Name"])
+        print("Age:", player["Age"])
+    elif cmd == "play":
+        print("Bạn mở mắt thức giấc bằng một giọng nói ngot ngào")
+        print("Dậy nào Akisa-kun, không thì cậu sẽ muộn học đó")
+        print("Giọng nói đó là của Mashiro Midori")
+        MashiroMidori = {
+            "Name":"Mashiro Midori",
+            "Age":16,
+            "Relationship":"Bạn thuở nhỏ",
+            "Affection":90
+        }
+        print("Name:", MashiroMidori["Name"])
+        print("Age:", MashiroMidori["Age"])
+        print("Mối quan hệ:", MashiroMidori["Relationship"])
+        print("Tình cảm:", MashiroMidori["Affection"])
+        print("Hôm nay mẹ cậu nhờ mình nấu bữa sáng cho cậu đấy")
+        print("Cậu dậy đi rồi xuống ăn")
+        print("Ukm, Mình dậy ngay đây")
+        print("Một lúc sau...")
+        print("Bạn đang đứng trước bàn ăn với những món ăn do Midori nấu")
+        print("Bạn sẽ nói")
+        cmd = input("Lựa chọn của bạn")
+        print ("1.Nhìn ngon đấy Midori-chan")
+        print ("2.Trông món ăn thật là ghê tởm")
+        if cmd == "1":
+            MashiroMidori["Affection"] = 92
+            print ("Độ tình cảm của Midori dành cho bạn tăng 2 điểm")
+            print ("Tình cảm:", MashiroMidori["Affection"])
+            print ("Ukm, cảm ơn cậu Akisa-kun")
+        elif cmd == "2":
+            MashiroMidori["Affection"] = 0
+            print ("Độ tình cảm của Midori dành cho bạn đã giảm về 0")
+            print ("Tình cảm:", MashiroMidori["Affection"])
+            print ("Game over vì bạn đã làm người con gái nấu ăn cho bạn khóc")
+
+
+
+
 
