@@ -1,0 +1,60 @@
+from random import randint
+def calculate_crit(player):
+    has_crit = False
+    dice = randint(0, 10)
+    chace = player["LUCK"] + player["AGI"]
+    if chace > dice:
+        has_crit = True
+
+    return has_crit
+
+
+def combat_round(player, opponent):
+    print(player["NAME"], "is beating", opponent["NAME"])
+    has_crit = calculate_crit(player)
+    if has_crit:
+        print("Đòn trí mạng")
+        damage = player["STR"] * 2 - opponent["DEF"]
+    else:
+        damage = player["STR"] - opponent["DEF"]
+        damage = opponent["STR"] - player["DEF"]
+    if damage > 0:
+        opponent["HP"] -= damage
+        print(opponent["NAME"], "lost", abs(damage), "HP" )
+        print(opponent["NAME"], "has", abs(opponent["HP"]), "left")
+    else:
+        player["HP"] -= abs(damage)
+        print(player["NAME"], "lost", abs(damage), "HP")
+        print(player["NAME"], "has", abs(player["HP"]), "left")
+
+
+
+
+
+
+def combat_full(player, opponent):
+    auto_combat = True
+    while True:
+        combat_round(player, opponent)
+        if opponent["HP"] <= 0 or player["HP"] <= 0:
+            break
+        combat_round(player, opponent)
+        if opponent["HP"] <= 0 or player["HP"] <= 0:
+            break
+        if auto_combat:
+            print("Bạn muốn:")
+            print("1. Đánh tiếp")
+            print("2. Chạy")
+            print("3. Tự động đánh tiếp")
+            option = input(">>>")
+            if option == "1":
+                print("Nhào zô")
+            elif option == "2":
+                dice = randint(0, 100)
+                if player["LUCK"]>dice:
+                    print("Bạn đã chạy thoát")
+                    break
+                else:
+                    print("Chạy trốn không thành công, bạn quay trở lại cuộc chiến")
+            elif option == "3":
+                auto_combat = False
