@@ -1,0 +1,25 @@
+def show_item(game_item):
+    for key, value in game_item.items():
+        print(key, ":", value)
+
+
+steel_guanlet = {
+    "NAME":"Steel Guanlet",
+    "HP":30,
+    "AGI":50,
+    "LUCK":1
+
+}
+bronze_shield = {
+    "NAME":"Bronze Shield",
+    "HP":50,
+    "AGI":30
+}
+
+golden_stick = {
+    "NAME": "Golden stick",
+    "AGI": 15,
+    "HP":20,
+    "STR":100
+}
+inventory = [steel_guanlet, bronze_shield, golden_stick]
