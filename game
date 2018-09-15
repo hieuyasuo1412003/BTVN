@@ -75,3 +75,5 @@ elif cmd == "here":
             combat_full(player, orc)
             print("Bạn đã lấy được vật phẩm:")
             show_item(inventory)
+        else:
+            print("Nhập lại đê!!!")
