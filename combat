@@ -46,6 +46,7 @@ def combat_full(player, opponent):
             print("1. Đánh tiếp")
             print("2. Chạy")
             print("3. Tự động đánh tiếp")
+            print("4. Dùng đồ")
             option = input(">>>")
             if option == "1":
                 print("Nhào zô")
@@ -58,3 +59,7 @@ def combat_full(player, opponent):
                     print("Chạy trốn không thành công, bạn quay trở lại cuộc chiến")
             elif option == "3":
                 auto_combat = False
+            elif option == "4":
+                use_item(player)
+            for k, v in player.items():
+                print(k + ":", v)
