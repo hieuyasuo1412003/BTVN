@@ -1,25 +1,77 @@
+ return item_name
+
+
+def generate_item():
+    name = generate_item_names()
+    item = {
+        "NAME": name,
+        "AGI": 0,
+        "HP": 0,
+        "DEF": 0,
+        "STR": 0,
+    }
+    if "bánh chuối" in name:
+        item["HP"] += 4
+    elif "gà" in name:
+        item["HP"] += 6
+        item["STR"] += 3
+        item["AGI"] += -2
+    elif "lợn" in name:
+        item["HP"] += 15
+        item["STR"] += 5
+        item["AGI"] += -3
+
+    if "rán" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                if v > 0:
+                    item[k] += 4
+    elif "luộc" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                if v > 0:
+                    item[k] += 3
+    elif "nướng" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                if v > 0:
+                    item[k] += 2
+
+    if "R" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                item[k] *= 1.5
+    elif "SR" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                item[k] *= 2
+    elif "SSR" in name:
+        for k, v in item.items():
+            if k == "NAME":
+                pass
+            else:
+                item[k] *= 2.5
+    return item
+
 def show_item(game_item):
+    print("* " * 15)
+
     for key, value in game_item.items():
-        print(key, ":", value)
+        print("*", key, ":", value)
 
-
-steel_guanlet = {
-    "NAME":"Steel Guanlet",
-    "HP":30,
-    "AGI":50,
-    "LUCK":1
-
-}
-bronze_shield = {
-    "NAME":"Bronze Shield",
-    "HP":50,
-    "AGI":30
-}
-
-golden_stick = {
-    "NAME": "Golden stick",
-    "AGI": 15,
-    "HP":20,
-    "STR":100
-}
-inventory = [steel_guanlet, bronze_shield, golden_stick]
+    print("* " * 15)
+    
+def show_items():
+    print("Túi đồ của bạn:")
+    for i in items:
+        print(str(items.index(i) + 1) + ".", i["NAME"])    
