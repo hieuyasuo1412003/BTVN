@@ -63,3 +63,8 @@ def combat_full(player, opponent):
                 use_item(player)
             for k, v in player.items():
                 print(k + ":", v)
+        if player["HP"] <= 0:
+            print("Lost")
+        else:
+            print(opponent["NAME"], "died")
+            item_after_cmbt()
